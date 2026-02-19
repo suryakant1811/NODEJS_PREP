@@ -22,3 +22,14 @@ app.get("/home", (req, res)=> {
     res.send("hello world")
 })
 
+app.get("/x/:x/y/:y/z/:z", (req, res)=> {
+    let a = req.params.x 
+    let b = req.params.y 
+    let c  = req.params.z
+    res.send(a+b+c)
+})
+
+app.get("/:a/:b/:c/:d", (req, res) => {
+    res.send("hlo student")
+})
+
