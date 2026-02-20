@@ -1,0 +1,10 @@
+---
+- name: first playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: update server
+      apt:
+        update_cache
+        
