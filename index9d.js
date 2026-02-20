@@ -2,8 +2,6 @@ import express from "express";
 const app = express();
 
 const token = Math.round(Math.random() * 100000 ).toString()
-// const jwt = token
-// console.log(jwt)
 app.use(express.json());
 
 const auth = (req, res, next) => {
