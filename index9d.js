@@ -1,0 +1,27 @@
+import express from "express";
+const app = express();
+
+const token = Math.round(Math.random() * 100000 ).toString()
+// const jwt = token
+// console.log(jwt)
+app.use(express.json());
+
+const auth = (req, res, next) => {
+    const val = req.headers.authorization
+    const tokenValue = val.split(" ")
+    if(tokenValue[1] === token) next()
+    else res.send("unauthrized")
+};
+
+app.get("/", auth,(req, res) => {
+    res.send("wlc");
+});
+
+app.post("/login", (req, res) => {
+    res.send(token)
+})
+
+
+app.listen(8888, () => {
+  console.log("server is live");
+});
