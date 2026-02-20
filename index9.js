@@ -9,7 +9,7 @@ const logger = (req, res, next) => {
 // app.use(logger)
 
 
-// app.get( "/", (req, logger, res) => {
+// app.get( "/", logger, (req, res) => {
 //     res.json(req.name)
 // } )
 
